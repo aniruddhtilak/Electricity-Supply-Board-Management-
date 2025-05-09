@@ -1,2 +1,4 @@
 # Electricity-Supply-Board-Management-
 Platform to manage a Electricity supplying company built using Python and SQL
+This Python script is a basic electricity board management system using MySQL for backend operations. It allows new users to register, generates unique box IDs, stores customer and billing details, and provides user authentication for both customers and admins. Users can update account details, pay bills (with fines if overdue), or delete their accounts if no dues are pending. The system also includes a FAQ section and automatically calculates monthly bills with GST and due dates. All data operations—like inserting, updating, and retrieving—are handled through SQL queries connected to a local database named electricity_supply_board`
+The Creator file creates all the required tables required for storage of data.
