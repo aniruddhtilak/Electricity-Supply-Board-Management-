@@ -1,0 +1,30 @@
+import mysql.connector as sql
+
+db=input("enter the name of database:")
+conn=sql.connect(host='localhost',user='root',passwd='12345')
+cur=conn.cursor()
+
+xyz="create database if not exists %s" % (db,)
+cur.execute(xyz)
+print('database sucessfully created')
+cur=conn.cursor()
+cur.execute("use "+db)
+if conn.is_connected:
+    print('******************VCA Electicity Board******************')
+    print('1.user')
+    print('2.transaction')
+    print('3.cust_detail')
+    
+cur=conn.cursor()
+cur.execute('create table user(username varchar(50),password varchar(50) )')
+conn.commit()
+print("table user created")
+cur=conn.cursor()
+cur.execute('create table transaction(boxid int(11) , bankname varchar(50) ,card_no bigint(20),unit int(11),amount int(11), GST float, totalamount float, amountdue float)')
+conn.commit()
+print("table transaction created")
+cur=conn.cursor()
+cur.execute('create table cust_detail(username varchar(50) ,boxid bigint(20),name varchar(50),phoneno bigint(20),email varchar(50))')
+conn.commit()
+print("table cust_detail created")
+cur=conn.cursor()
